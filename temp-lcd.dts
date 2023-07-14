@@ -1,0 +1,27 @@
+/dts-v1/;
+/plugin/;
+/{    
+	fragment@0{
+		target = <&i2c1>;
+		__overlay__{
+			#address-cells = <1>;
+			#size-cells = <0>;
+			temp: temp@38{
+				compatible = "temparature";
+				reg = <0x38>;
+				my_value   = <16 25 17 27 22 5 6 26 23 24>;
+				lcd-gpios  = <&gpio 16 0>,
+					     <&gpio 25 0>,
+					     <&gpio 17 0>,
+					     <&gpio 27 0>,
+					     <&gpio 22 0>,
+					     <&gpio 5 0>,
+					     <&gpio 6 0>,
+					     <&gpio 26 0>,
+					     <&gpio 23 0>,
+					     <&gpio 24 0>;
+			};
+		};
+	};
+};
+
